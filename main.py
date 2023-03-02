@@ -9,4 +9,6 @@ class Dog:
 dog1 = Dog("Rex", 3)
 dog1.bark()
 
+print(dog1.name)
+
 
