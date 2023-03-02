@@ -1,14 +1,22 @@
-class Dog:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+import random
 
-    def bark(self):
-        print(self.name + " is barking!")
+print("Добро пожаловать в игру угадай число!")
+print("Я загадаю число в диапазоне от 1 до 100, а вы должны отгадать его.")
 
-dog1 = Dog("Rex", 3)
-dog1.bark()
+number = random.randint(1, 100)
+attempts = 0
 
-print(dog1.name)
+while True:
+    guess = int(input("Введите число: "))
+    attempts += 1
+
+    if guess == number:
+        print(f"Поздравляю, вы угадали число за {attempts} попыток!")
+        break
+    elif guess < number:
+        print("Загаданное число больше. Попробуйте еще раз.")
+    else:
+        print("Загаданное число меньше. Попробуйте еще раз.")
+
 
 
