@@ -1,22 +1,15 @@
-import random
 
-print("Добро пожаловать в игру угадай число!")
-print("Я загадаю число в диапазоне от 1 до 100, а вы должны отгадать его.")
+def my_decorator(func):
+    def wrapper():
+        print("До вызова функции.")
+        func()
+        print("После вызова функции.")
+    return wrapper
 
-number = random.randint(1, 100)
-attempts = 0
+@my_decorator
+def say_hello():
+    print("Привет!")
 
-while True:
-    guess = int(input("Введите число: "))
-    attempts += 1
-
-    if guess == number:
-        print(f"Поздравляю, вы угадали число за {attempts} попыток!")
-        break
-    elif guess < number:
-        print("Загаданное число больше. Попробуйте еще раз.")
-    else:
-        print("Загаданное число меньше. Попробуйте еще раз.")
-
+say_hello()
 
 
